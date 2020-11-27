@@ -8,5 +8,7 @@ A sample application on MVU architecture (4-layered) using Bolero.
 
 ## Design
 
+[Details](https://zenn.dev/kos59125/articles/b463b153b837d2346cf0) (in Japanese)
+
 ![design](images/design.png)
 
