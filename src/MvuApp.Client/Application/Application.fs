@@ -175,10 +175,6 @@ let view model dispatch =
 
 type ApplicationComponent() =
    inherit ProgramComponent<Model, Message>()
-
-   //[<Inject>]
-   //member val AuthenticationStateProvider = Unchecked.defaultof<AuthenticationStateProvider> with get, set
-
    override this.Program =
       Program.mkProgram (fun _ -> init ()) (update this) view
       |> Program.withRouter router
