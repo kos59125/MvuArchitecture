@@ -1,0 +1,37 @@
+<div class="modal" attr="${ModalActive}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <article class="message is-info">
+      <div class="message-header">Sign in required</div>
+      <div class="message-body">
+        <div class="content">
+          ${ErrorNotification}
+          <p>Use <code>user:password</code> to sign in.</p>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="text" placeholder="Name" bind="${Name}" />
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Password" bind="${Password}" />
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-success is-fullwidth" onclick="${SignInButtonClicked}">Sign in</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <button class="modal-close is-large" aria-label="close" onclick="${CloseButtonClicked}"></button>
+</div>
+

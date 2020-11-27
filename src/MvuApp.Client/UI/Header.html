@@ -1,0 +1,39 @@
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">MVU Architecture</a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+    <div class="navbar-end">
+      ${User}
+      <template id="SignInButton">
+        <div class="navbar-item">
+          <button class="button is-success" onclick="${SignInButtonClicked}">
+            Sign in
+          </button>
+        </div>
+      </template>
+      <template id="UserInfo">
+        <div class="navbar-item">
+          <a class="button is-text">
+            <span class="icon">
+              <i class="fas fa-user"></i>
+            </span>
+            <span>${UserName}</span>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <button class="button is-success" onclick="${SignOutButtonClicked}">
+            Sign out
+          </button>
+        </div>
+      </template>
+    </div>
+  </div>
+</nav>

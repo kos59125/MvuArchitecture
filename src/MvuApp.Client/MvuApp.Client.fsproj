@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="UI\Layout\Layout.fs" />
+    <Content Include="UI\Layout\ApplicationLayout.html" />
+    <Compile Include="UI\Layout\ApplicationLayout.fs" />
+    <Content Include="UI\Layout\HomeScreenLayout.html" />
+    <Compile Include="UI\Layout\HomeScreenLayout.fs" />
+    <Content Include="UI\Layout\CounterScreenLayout.html" />
+    <Compile Include="UI\Layout\CounterScreenLayout.fs" />
+    <Content Include="UI\Button.html" />
+    <Compile Include="UI\Button.fs" />
+    <Content Include="UI\NumericInput.html" />
+    <Compile Include="UI\NumericInput.fs" />
+    <Content Include="UI\ErrorNotification.html" />
+    <Compile Include="UI\ErrorNotification.fs" />
+    <Content Include="UI\MenuItem.html" />
+    <Compile Include="UI\MenuItem.fs" />
+    <Content Include="UI\Header.html" />
+    <Compile Include="UI\Header.fs" />
+    <Content Include="UI\SignInModal.html" />
+    <Compile Include="UI\SignInModal.fs" />
+    <Content Include="UI\Counter.html" />
+    <Compile Include="UI\Counter.fs" />
+    <Compile Include="Feature\ApplicationFeature.fs" />
+    <Compile Include="Feature\Header.fs" />
+    <Compile Include="Feature\SignInModal.fs" />
+    <Compile Include="Feature\CounterService.fs" />
+    <Compile Include="Feature\RemotingCounter.fs" />
+    <Compile Include="Screen\HeaderScreen.fs" />
+    <Compile Include="Screen\SignInScreen.fs" />
+    <Compile Include="Screen\HomeScreen.fs" />
+    <Compile Include="Screen\CounterScreen.fs" />
+    <Compile Include="Application\AuthenticationService.fs" />
+    <Compile Include="Application\Application.fs" />
+    <Compile Include="Startup.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Bolero" Version="0.*" />
+    <PackageReference Include="Bolero.Build" Version="0.*" />
+    <PackageReference Include="Bolero.HotReload" Version="0.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.*" />
+  </ItemGroup>
+</Project>
