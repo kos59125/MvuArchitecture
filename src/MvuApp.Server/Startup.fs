@@ -2,20 +2,17 @@ namespace MvuApp.Server
 
 open Microsoft.AspNetCore
 open Microsoft.AspNetCore.Authentication.Cookies
+open Microsoft.AspNetCore.Components.Authorization
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.DependencyInjection
-open Bolero
 open Bolero.Remoting.Server
-open Bolero.Server.RazorHost
 open Bolero.Templating.Server
-open MvuApp.Client
+open Bolero.Server
 
 type Startup() =
 
-   // This method gets called by the runtime. Use this method to add services to the container.
-   // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-   member this.ConfigureServices(services: IServiceCollection) =
+   member __.ConfigureServices(services:IServiceCollection) =
       services.AddMvc().AddRazorRuntimeCompilation() |> ignore
       services.AddServerSideBlazor() |> ignore
       services
@@ -23,17 +20,18 @@ type Startup() =
          .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie()
             .Services
+         |> ignore
+      services
          .AddSingleton<IUserRepository, UserRepository>()
-         .AddRemoting<AuthenticationService>()
-         .AddRemoting<CounterService>()
+         .AddRemoting<AuthenticationHandler>()
+         .AddRemoting<RemoteCounterHandler>()
          .AddBoleroHost()
 #if DEBUG
          .AddHotReload(templateDir = __SOURCE_DIRECTORY__ + "/../MvuApp.Client")
 #endif
       |> ignore
 
-   // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-   member this.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =
+   member __.Configure(app:IApplicationBuilder, env:IWebHostEnvironment) =
       app
          .UseAuthentication()
          .UseRemoting()

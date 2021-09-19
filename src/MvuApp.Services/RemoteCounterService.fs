@@ -1,4 +1,4 @@
-module MvuApp.Client.Feature.RemoteCounterService
+module MvuApp.Service.RemoteCounterService
 
 open Bolero.Remoting
 

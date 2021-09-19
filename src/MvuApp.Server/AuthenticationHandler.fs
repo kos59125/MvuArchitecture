@@ -3,12 +3,13 @@ namespace MvuApp.Server
 open System.Security.Claims
 open Microsoft.AspNetCore.Authentication
 open Microsoft.AspNetCore.Authentication.Cookies
+open Microsoft.AspNetCore.Identity
 open Bolero.Remoting
 open Bolero.Remoting.Server
-open MvuApp.Client.Application.AuthenticationService
+open MvuApp.Service.AuthenticationService
 
 
-type AuthenticationService(remote:IRemoteContext, userRepository:IUserRepository) =
+type AuthenticationHandler(remote:IRemoteContext, userRepository:IUserRepository) =
    inherit RemoteHandler<Service>()
 
    override _.Handler = {

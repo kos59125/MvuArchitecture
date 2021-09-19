@@ -9,6 +9,8 @@ open Bolero.Templating.Client
 open MvuApp.Client.UI.Layout
 open MvuApp.Client.Feature
 open MvuApp.Client.Screen
+open MvuApp.Service
+open MvuApp.Service.AuthenticationService
 
 type Page =
    | [<EndPoint("/")>] Home

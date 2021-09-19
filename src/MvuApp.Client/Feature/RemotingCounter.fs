@@ -4,7 +4,7 @@ open Bolero
 open Bolero.Remoting
 open Elmish
 open MvuApp.Client.UI
-open RemoteCounterService
+open MvuApp.Service.RemoteCounterService
 
 type Model = {
    Counter : Counter.Model

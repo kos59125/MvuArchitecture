@@ -1,12 +1,12 @@
-module MvuApp.Client.Application.AuthenticationService
+module MvuApp.Service.AuthenticationService
 
-open System
 open Bolero.Remoting
 
 type SignInRequestModel = {
    Name : string
    Password : string
 }
+
 type SignInUserResponseModel =
    | NotSignedIn
    | User of string * string

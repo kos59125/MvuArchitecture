@@ -1,9 +1,9 @@
 namespace MvuApp.Server
 
 open Bolero.Remoting.Server
-open MvuApp.Client.Feature.RemoteCounterService
+open MvuApp.Service.RemoteCounterService
 
-type CounterService(remote:IRemoteContext) =
+type RemoteCounterHandler(remote:IRemoteContext) =
    inherit RemoteHandler<Service>()
 
    override _.Handler = {
