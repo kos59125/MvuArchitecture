@@ -56,6 +56,12 @@ let view model dispatch =
       )
       .SignInButtonClicked(fun _ -> SignInButtonClicked |> dispatch)
       .CloseButtonClicked(fun _ -> CloseModal |> dispatch)
+      .KeyPressed(fun e ->
+         match e.Code with
+         | "Enter"
+         | "NumpadEnter" -> SignInButtonClicked |> dispatch
+         | _ -> ()
+      )
       .ErrorNotification(
          match model.ErrorNotification with
          | None -> Html.empty
