@@ -9,7 +9,7 @@
           <p>Use <code>user:password</code> to sign in.</p>
           <div class="field">
             <p class="control has-icons-left">
-              <input class="input" type="text" placeholder="Name" bind="${Name}" />
+              <input class="input" type="text" placeholder="Name" bind="${Name}" onkeypress="${KeyPressed}" />
               <span class="icon is-small is-left">
                 <i class="fas fa-user"></i>
               </span>
@@ -17,7 +17,7 @@
           </div>
           <div class="field">
             <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="Password" bind="${Password}" />
+              <input class="input" type="password" placeholder="Password" bind="${Password}" onkeypress="${KeyPressed}" />
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
